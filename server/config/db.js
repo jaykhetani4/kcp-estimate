@@ -1,5 +1,10 @@
-const { Pool } = require('@neondatabase/serverless');
+const { Pool, neonConfig } = require('@neondatabase/serverless');
+const ws = require('ws');
 require('dotenv').config();
+
+// Required for Node.js environments (like local development) 
+// to use Neon serverless over WebSockets
+neonConfig.webSocketConstructor = ws;
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
