@@ -59,6 +59,8 @@ export const Login = () => {
               onChange={e => setUsername(e.target.value)}
               placeholder="Enter your username"
               autoComplete="username"
+              autoCapitalize="none"
+              autoCorrect="off"
             />
 
             <div className="relative">
